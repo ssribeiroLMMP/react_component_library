@@ -1,3 +1,3 @@
-import Case from "./Logo";
+import {Case, CasesGridView} from "./Case";
 
-export default Case;
+export {Case, CasesGridView};

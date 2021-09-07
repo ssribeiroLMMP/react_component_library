@@ -26,14 +26,22 @@ function Case (props) {
 
 // # CaseGridView React Component Construction
 function CasesGridView (props) {
-    
+    const cases = props.caseData;
+
     return (
         // Logo assembled by Icon and Name
-        <div className="logo" href={props.url}>
-            
+        <div className="scope">
+            {cases.map((singleCase) => (
+                <Case id={singleCase.id}
+                        name={singleCase.name}
+                        description={singleCase.description}
+                        created={singleCase.created}
+                        modifield={singleCase.modified} 
+                        last_run={singleCase.lastrun} />
+            ))}
         </div>
-    )
+    );
 
-}
+};
 
 export { Case , CasesGridView };
