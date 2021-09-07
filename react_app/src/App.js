@@ -11,8 +11,7 @@ import './App.css';
 import { Header, GridForm, 
         FAB, //ActionButton,  Action, // Last two only needed for manual creation of items
         darkColors, lightColors } from './components/common';
-
-
+import { Cases } from "./cases";
 
 function App() {
 
@@ -50,10 +49,7 @@ function App() {
 
             {/* User Cases Route */}
             <Route exact path={navlinks[1].url}>
-              <div name="inputs" className="case-inputs">
-                {/* AUTOMATIC CREATION FROM DATA: simply pass data prop */}
-                <GridForm data={formData} conversionFactors={conversionFactors} />
-              </div>
+              <Cases />
             </Route>
 
             {/* Case i Route */}
