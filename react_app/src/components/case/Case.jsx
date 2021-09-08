@@ -4,6 +4,9 @@ import React from 'react';
 // # Import Component Style
 import './Case.css'
 
+// All Components import
+import { GridActionIcon } from "../common";
+
 // # Logo React Component Construction
 function Case (props) {
     
@@ -11,9 +14,24 @@ function Case (props) {
         // Case Row assembled by Action Icons and Other Fields
         <div className="logo" id={["case_"+props.id]} href={props.url}>
             <div className="field_actions">
-                <i className="edit_case_button"></i>
-                <i className="view_case_button"></i>
-                <i className="delete_case_button"></i>
+                <GridActionIcon routeURL={"/cases_1"}
+                                tooltip={"Edit Case"}
+                                className={"scope"}
+                                icon={"fas fa-edit"} 
+                                backgroundColor={"blue"}
+                                color={"white"}/>
+                <GridActionIcon routeURL={"/cases_1"}
+                                tooltip={"Edit Case"}
+                                className={"scope"}
+                                icon={"fas fa-view"} 
+                                backgroundColor={"green"}
+                                color={"white"}/>
+               <GridActionIcon routeURL={"/cases_1"}
+                                tooltip={"Edit Case"}
+                                className={"scope"}
+                                icon={"fas fa-delete"} 
+                                backgroundColor={"red"}
+                                color={"white"}/>
             </div>
             <div className="field_name">{props.name}</div>
             <div className="field_desc">{props.description}</div>

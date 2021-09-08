@@ -1,11 +1,10 @@
 // Main import of React
 import React from 'react';
-import { Link } from "react-router-dom";
 
 import './Cases.css';
 
 // All Components import
-import { Case, CasesGridView } from '../components/case';
+import { CasesGridView } from '../components/case';
 
 function Cases() {
 
