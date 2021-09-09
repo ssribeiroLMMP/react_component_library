@@ -1,0 +1,15 @@
+
+.caseGridScope {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    display: flex;
+    text-align: center;
+    overflow:hidden;
+  }
+
+.caseGridScope h4 {
+    color: black;
+    text-align: left;
+    margin-left: 10px;
+}

@@ -39,9 +39,9 @@ function App() {
     // React Browser Router
     <Router>
       <div name="app" className="App">
-        <Header navlinks={navlinks} mail={"info@difsolutions.com"} />
+        <Header className="mainHeader" navlinks={navlinks} mail={"info@difsolutions.com"} />
         <div name="main" className="main">
-        <Switch>
+          <Switch>
             {/* Main page Route */}
             <Route exact path="/">
                 <div className="scope" style={{color:"white"}}>Main Page</div>

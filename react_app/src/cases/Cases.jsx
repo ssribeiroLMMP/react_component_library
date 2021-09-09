@@ -17,7 +17,7 @@ function Cases() {
 
     return (
         // React Browser Router
-        <div className="scope" style={{color:"white",textDecoration:"none"}}>
+        <div className="caseGridScope" style={{color:"white",textDecoration:"none"}}>
             <h4> User's Cases: </h4>
             <CasesGridView caseData={caseData} caseLabels={caseLabels}/> 
             {/* </CasesGridView>data={casesData}/> */}
