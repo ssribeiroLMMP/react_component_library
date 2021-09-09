@@ -22,7 +22,6 @@ body {
 }
 
 .scope {
-  min-width: 400px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,8 +30,8 @@ body {
   align-self: center;
   justify-self: center;
   margin: 0 auto;
-  max-width: 30%;
-
+  text-align: left;
+  overflow:hidden;
 }
 
 .case-inputs {

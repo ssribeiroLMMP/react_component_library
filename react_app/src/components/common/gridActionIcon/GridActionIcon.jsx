@@ -10,11 +10,10 @@ function GridActionIcon (props) {
     
     return (
         <Link to={props.routeURL}>
-            <button className={"action-icon"} tooltip={props.tooltip}>
-                <i  className={props.icon} 
+            <button className={"action-icon"} 
                     style={{backgroundColor: props.backgroundColor, color: props.color}}
-                    >
-                </i>
+                    tooltip={props.tooltip}>
+                <i  className={props.icon}></i>
             </button>
         </Link>
         

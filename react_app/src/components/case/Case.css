@@ -3,9 +3,70 @@
 }
 
 :root {
-    --tooltip-backcolor: #424242;
-    --tooltip-forecolor: #FAFAFA;
+  --tooltip-backcolor: #424242;
+  --tooltip-forecolor: #FAFAFA;
   }
+
+
+.caseRow{
+  width: fit-content;
+}
+
+.caseGrid table,th, td{
+  border: 1px solid rgb(136, 135, 135);
+  height: fit-content;
+  margin: 1px auto;
+  table-layout: fixed;
+}
+
+.caseGrid {
+  color:black;
+  background-color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.field_actions{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.field_name{
+  font-size: 10px;
+  text-justify: left;
+  height: 100%;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-top: 3px;
+}
+
+.field_desc{
+  font-size: 10px;
+  text-justify: left;
+  margin: 0 auto;
+}
+
+.field_created{
+  font-size: 10px;
+  text-justify: left;
+  margin: 0 auto;
+}
+
+.field_modified{
+  font-size: 10px;
+  text-justify: left;
+  margin: 0 auto;
+  overflow-wrap:normal;
+}
+
+.field_lastrun{
+  font-size: 10px;
+  text-justify: left;
+  margin: 0 auto;
+  overflow-wrap:normal;
+}
 
 [tooltip]:before {
     bottom: 25%;

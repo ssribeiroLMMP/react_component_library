@@ -1,6 +1,6 @@
 // # Main Import 
 import React from 'react';
-
+import { darkColors , lightColors } from '../common';
 // # Import Component Style
 import './Case.css'
 
@@ -12,52 +12,63 @@ function Case (props) {
     
     return (
         // Case Row assembled by Action Icons and Other Fields
-        <div className="logo" id={["case_"+props.id]} href={props.url}>
-            <div className="field_actions">
+        <tr className="caseRow" id={["case_"+props.id]} href={props.url}>
+            <td className="field_actions">
                 <GridActionIcon routeURL={"/cases_1"}
                                 tooltip={"Edit Case"}
                                 className={"scope"}
                                 icon={"fas fa-edit"} 
-                                backgroundColor={"blue"}
+                                backgroundColor={darkColors.yellow}
                                 color={"white"}/>
                 <GridActionIcon routeURL={"/cases_1"}
-                                tooltip={"Edit Case"}
+                                tooltip={"View Case"}
                                 className={"scope"}
-                                icon={"fas fa-view"} 
-                                backgroundColor={"green"}
+                                icon={"fas fa-eye"} 
+                                backgroundColor={darkColors.blue}
                                 color={"white"}/>
-               <GridActionIcon routeURL={"/cases_1"}
-                                tooltip={"Edit Case"}
+                <GridActionIcon routeURL={"/cases_1"}
+                                tooltip={"Delete Case"}
                                 className={"scope"}
-                                icon={"fas fa-delete"} 
-                                backgroundColor={"red"}
+                                icon={"fas fa-trash"} 
+                                backgroundColor={darkColors.red}
                                 color={"white"}/>
-            </div>
-            <div className="field_name">{props.name}</div>
-            <div className="field_desc">{props.description}</div>
-            <div className="field_created">{props.created}</div>
-            <div className="field_modified">{props.modified}</div>
-            <div className="field_lastrun">{props.last_run}</div>
-        </div>
+            </td>
+            <td className="field_name">{props.name}</td>
+            <td className="field_desc">{props.description}</td>
+            <td className="field_created">{props.created}</td>
+            <td className="field_modified">{props.modified}</td>
+            <td className="field_lastrun">{props.last_run}</td>
+            
+        </tr>
     )
 }
 
 // # CaseGridView React Component Construction
 function CasesGridView (props) {
+    const caseLabels = props.caseLabels;
     const cases = props.caseData;
 
     return (
         // Logo assembled by Icon and Name
-        <div className="scope">
-            {cases.map((singleCase) => (
-                <Case id={singleCase.id}
-                        name={singleCase.name}
-                        description={singleCase.description}
-                        created={singleCase.created}
-                        modifield={singleCase.modified} 
-                        last_run={singleCase.lastrun} />
-            ))}
-        </div>
+        <table className="caseGrid">
+            <thead className="caseGrid_header">
+                <tr>
+                    {caseLabels.map((caseLabel) => (
+                    <th>{caseLabel}</th>
+                ))}
+                </tr>
+            </thead>
+            <tbody>
+                {cases.map((singleCase) => (
+                    <Case id={singleCase.id}
+                            name={singleCase.name}
+                            description={singleCase.description}
+                            created={singleCase.created}
+                            modified={singleCase.modified} 
+                            last_run={singleCase.lastrun} />
+                ))}
+            </tbody>
+        </table>
     );
 
 };
