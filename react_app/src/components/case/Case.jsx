@@ -49,7 +49,7 @@ function CasesGridView (props) {
     const cases = props.caseData;
 
     return (
-        // Logo assembled by Icon and Name
+        // Table assembled by Header and Body
         <table className="caseGrid">
             <thead className="caseGrid_header">
                 <tr>
