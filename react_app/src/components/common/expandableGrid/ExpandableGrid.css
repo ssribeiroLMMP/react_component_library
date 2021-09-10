@@ -1,0 +1,28 @@
+
+.expandable_row{
+    display: flex;
+}
+
+.expand_button{
+    display: flex;   
+}
+
+.expandable_grid {
+    color:black;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+} 
+
+.expandable_grid table,th, td{
+    border: 1px solid rgb(136, 135, 135);
+    height: fit-content;
+    margin: 1px auto;
+    table-layout: fixed;
+}
+
+.expandable_grid_actions_column{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
