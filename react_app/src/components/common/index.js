@@ -6,7 +6,8 @@ import Dropdown from "./dropdown";
 import GridForm from "./gridForm";
 import GridActionIcon from "./gridActionIcon";
 import { FAB, Action, ActionButton} from "./fab";
-import { darkColors, lightColors } from "./MaterialColors"
+import ExpandableGrid from "./expandableGrid";
+import { darkColors, lightColors } from "./MaterialColors";
 
 
 export {
@@ -20,6 +21,7 @@ export {
     Action, 
     ActionButton, 
     GridActionIcon,
+    ExpandableGrid,
     darkColors, 
     lightColors,
 }
