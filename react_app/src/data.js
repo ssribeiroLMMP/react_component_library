@@ -1,4 +1,4 @@
-export {accordionData, navlinks, conversionFactors, formData, actionData}
+import {darkColors,lightColors} from "./components/common"
 
 const accordionData = [
     {
@@ -36,3 +36,5 @@ const accordionData = [
                       actions: [{tooltip:"Ação 0" ,icon:"fas fa-react" ,key:"action1" ,url:"/" ,backgroundColor: darkColors.blue ,color: lightColors.white},
                                 {tooltip:"Ação 1" ,icon:"fas fa-minus" ,key:"action2" ,url:"/" ,backgroundColor: darkColors.blue ,color: lightColors.white}
                                 ]};
+
+export {accordionData, navlinks, conversionFactors, formData, actionData}
