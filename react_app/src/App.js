@@ -9,7 +9,7 @@ import './App.css';
 import {navlinks, formData, accordionData, conversionFactors, actionData} from "./data"
 
 // All Components import
-import { Header, GridForm, 
+import { Header, GridForm, Accordion,
         FAB, //ActionButton,  Action, // Last two only needed for manual creation of items
         darkColors, lightColors } from './components/common';
 import { Cases } from "./cases";
@@ -32,6 +32,7 @@ function App() {
             {/* User Cases Route */}
             <Route exact path={navlinks[1].url}>
               <Cases />
+              <Accordion data={accordionData}/>
             </Route>
 
             {/* Case i Route */}
