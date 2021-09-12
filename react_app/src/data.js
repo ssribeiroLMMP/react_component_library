@@ -2,16 +2,16 @@ import {darkColors,lightColors} from "./components/common"
 
 const accordionData = [
     {
-      question: 'What do you call a dog magician?',
-      answer: 'A labracadabrador.'
+      main: 'What do you call a dog magician?',
+      hidden: 'A labracadabrador.'
     },
     {
-      question: 'What do you call a funny mountain?',
-      answer: 'Hill-arious.'
+      main: 'What do you call a funny mountain?',
+      hidden: 'Hill-arious.'
     },
     {
-      question: 'What did the astronaut say when he crashed into the moon?',
-      answer: 'I Apollo-gize.'
+      main: 'What did the astronaut say when he crashed into the moon?',
+      hidden: 'I Apollo-gize.'
     }
   ];
 
