@@ -7,6 +7,7 @@ import GridForm from "./gridForm";
 import GridActionIcon from "./gridActionIcon";
 import { FAB, Action, ActionButton} from "./fab";
 import ExpandableGrid from "./expandableGrid";
+import Accordion from "./accordionPanel";
 import { darkColors, lightColors } from "./MaterialColors";
 
 
@@ -22,6 +23,7 @@ export {
     ActionButton, 
     GridActionIcon,
     ExpandableGrid,
+    Accordion,
     darkColors, 
     lightColors,
 }
