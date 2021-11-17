@@ -1,5 +1,5 @@
 // Main import of React
-import React from 'react';
+import React , { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Theme importv #TODO
@@ -8,12 +8,59 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
 // All Components import
-import { Header, GridForm, 
+import { Header, GridForm, Toast,
         FAB, //ActionButton,  Action, // Last two only needed for manual creation of items
         darkColors, lightColors } from './components/common';
 import { Cases } from "./cases";
 
+
 function App() {
+
+
+  // Toast states
+  const [toastList,setToastList] = useState([]);
+  
+  //Toast possible alert types
+  let toastProperties = null;
+  const showToast = type => {
+    switch(type) {
+      case 'success':
+        toastProperties = {
+          id: toastList.length+1,
+          title: 'Success',
+          description: 'This is a success toast component',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+      case 'danger':
+        toastProperties = {
+          id: toastList.length+1,
+          title: 'Danger',
+          description: 'This is a danger toast component',
+          backgroundColor: '#d9534f'
+        }
+        break;
+      case 'info':
+        toastProperties = {
+          id: toastList.length+1,
+          title: 'Info',
+          description: 'This is a info toast component',
+          backgroundColor: '#5bc0de'
+        }
+        break;
+      case 'warning':
+        toastProperties = {
+          id: toastList.length+1,
+          title: 'Warning',
+          description: 'This is a warning toast component',
+          backgroundColor: '#f0ad4e'
+        }
+        break;
+      default:
+        toastProperties = [];
+    }
+    setToastList([...toastList, toastProperties]);
+  };
 
   // Set navlinks Object
   const navlinks = [
@@ -44,7 +91,11 @@ function App() {
           <Switch>
             {/* Main page Route */}
             <Route exact path="/">
-                <div className="scope" style={{color:"white"}}>Main Page</div>
+                <div className="scope" style={{color:"white"}}>Main Page
+                  <button onClick={() => showToast('danger')}>Danger</button>
+                </div>
+                
+                <Toast toastList={toastList} setToastList={setToastList}/>
             </Route>
 
             {/* User Cases Route */}
