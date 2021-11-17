@@ -61,7 +61,6 @@ function FAB(props) {
                 ))}
             
                 {/* //Action Buttom */}
-                {console.log(data.actionButtom)}
                 <ActionButton   tooltip={data.actionButtom.tooltip}
                                 icon={data.actionButtom.icon}
                                 key={data.actionButtom.key}
