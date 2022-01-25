@@ -1,7 +1,6 @@
 // # Main Import 
 import React from 'react';
-import { darkColors } from '..';
-import { GridActionIcon } from '..';
+import { GridActionIcon } from '../index';
 
 // # Import Component Style
 import './ExpandableGrid.css'
@@ -20,11 +19,12 @@ function ActionColumn(props) {
     //             key: "duplicate_case_button_",route: "/case?id=",
     //             backgroundColor: darkColors.blue ,color: darkColors.white }]
     const actions = props.actions;
+    const id = props.id;
 
     return (
         <td className="expandable_grid_actions_column">
             {actions.map((action) => (
-                <GridActionIcon routeURL={action.route}
+                <GridActionIcon routeURL={action.route + id}
                                 tooltip={action.tooltip}
                                 className={"action_icon_button"}
                                 icon={action.icon}
@@ -59,14 +59,15 @@ function ExpandableRow(props) {
     //        {data: {col1(first Column without actions):"Value",col2:"Value",col3:"Value",...}
     const rowdata = props.rowData
     const actions = props.actions
+    const rowOrder = ['id','name','desc','created','modified','lastrun']
 
     return (
         // Case Row assembled by Action Icons and Other Fields
-        <tr className="caseRow" id={["case_"+props.id]} href={props.url}>
+        <tr className="caseRow" id={["case_"+rowdata.id]}>
             {/* Action Column */}
-            <ActionColumn actions={actions} />
+            <ActionColumn actions={actions} id={rowdata.id} />
             {/* Regular Column $TODO: Separate Columns and Expandable Columns */}
-            {Object.keys(rowdata).map((key) => (
+            {rowOrder.map((key) => (
                 <td> {rowdata[key]} </td>
             ))}
         </tr>
@@ -75,6 +76,7 @@ function ExpandableRow(props) {
 }
 
 // # Expandable Grid React Component Construction
+//function ExpandableGrid(props) {
 function ExpandableGrid() {
     
     //Local Variables
@@ -107,31 +109,38 @@ function ExpandableGrid() {
                                     key: "duplicate_case_button_",route: "/case?id=",
                                     backgroundColor: darkColors.blue ,color: darkColors.white }]
                         }
+    //const metaData = props.metaData;
     // Data holds the grid data:
     // data Object holds the info of grid Labels and available actions:
     // data Object Structure:
-    // data = [{col1:"Value",col2:"Value",col3:"Value",...},
-    //             {col1:"Value",col2:"Value",col3:"Value",...},...]
-    const data = [  {id:1, name:"Case 1",desc:"Demo Case 1", created:"01/01/2021 09:00:00", modified:"01/03/2021 09:00:00", lastrun:"01/03/2021 09:00:00"},
-                    {id:2, name:"Case 2",desc:"Demo Case 2", created:"01/04/2021 09:00:00", modified:"05/03/2021 09:00:00", lastrun:"05/04/2021 09:00:00"}
-];
+    const data = [{col1:"Value",col2:"Value",col3:"Value",...},
+                {col1:"Value",col2:"Value",col3:"Value",...},...]
+    //const data = props.data;
     return (
         // Logo assembled by Icon and Name
-        <table className="expandable_grid">
-            <thead className="expandable_grid_header">
-                <tr>
-                    {metaData.header.map((caseLabel) => (
-                    <th>{caseLabel.label}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((row) => (
-                    <ExpandableRow actions={metaData.actions} 
-                                    rowData={row}/>
-                ))}
-            </tbody>
-        </table>
+        <div className='expandable_grid_container'>
+            <div>
+                <table className="expandable_grid">
+                    <thead className="expandable_grid_header">
+                        <tr>
+                            {metaData.header.map((caseLabel) => (
+                            <th>{caseLabel.label}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((row) => (
+                            <ExpandableRow actions={metaData.actions} 
+                                            rowData={row}/>
+                        ))}
+                    </tbody>
+                </table>
+                {data.length == 0 &&
+                <div className='expandable_grid_container_empty'>
+                    To add a new case click +
+                </div>}
+            </div>
+        </div>
     )
 
 }
